@@ -44,7 +44,7 @@ class MyFrame extends JFrame implements ActionListener
     {
         if (e.getSource() == convertButton)
         {
-            String input = optionPane.showInputDialog(frame, "Enter the temperature and the unit of measurement (e.g., 25 Kelvins):");
+            String input = optionPane.showInputDialog(frame, "Enter the temperature and the unit of measurement (e.g., 25 Kelvin):");
             convert(input);
         }
     }
@@ -66,16 +66,16 @@ class MyFrame extends JFrame implements ActionListener
             if (unit.equalsIgnoreCase(temperature[0]))
             { // temperature in Fahrenheit
                 double toCelsius = (temperatureValue - 32) * 5/9;
-                double toKelvins = (temperatureValue - 32) * 5/9 + 273.15;
+                double toKelvin = (temperatureValue - 32) * 5/9 + 273.15;
                 JOptionPane.showMessageDialog(frame, String.format("Temperature in Celsius: %.2f", toCelsius), "Converted Temperature", JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(frame, String.format("Temperature in Kelvin: %.2f", toKelvins), "Converted Temperature", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(frame, String.format("Temperature in Kelvin: %.2f", toKelvin), "Converted Temperature", JOptionPane.INFORMATION_MESSAGE);
             }
             else if (unit.equalsIgnoreCase(temperature[1])) 
             { // temperature in degrees Celsius
                 double toFahrenheit = (temperatureValue * 9/5) + 32;
-                double toKelvins = temperatureValue + 273.15;
+                double toKelvin = temperatureValue + 273.15;
                 JOptionPane.showMessageDialog(frame, String.format("Temperature in Fahrenheit: %.2f", toFahrenheit), "Converted Temperature", JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(frame, String.format("Temperature in Kelvin: %.2f", toKelvins), "Converted Temperature", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(frame, String.format("Temperature in Kelvin: %.2f", toKelvin), "Converted Temperature", JOptionPane.INFORMATION_MESSAGE);
             }
             else if (unit.equalsIgnoreCase(temperature[2]))
             { // temperature in Kelvins
